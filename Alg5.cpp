@@ -40,14 +40,14 @@ bool edgInTree[16];
 void main()
 {
 	setlocale(LC_ALL, "ru");
-	//алгоритм Прима
+	//Г Г«ГЈГ®Г°ГЁГІГ¬ ГЏГ°ГЁГ¬Г 
 	/*for (int i = 0; i < 8; i++) verInTree[i] = false;
 	int n = 1;
 	cout << "Enter 1 <= n <= 8\n";
 	cin >> n;
 	if (!(1 <= n <= 8))
 	{
-		cout << "Invalid n, начнём с первого\n";
+		cout << "Invalid n, Г­Г Г·Г­ВёГ¬ Г± ГЇГҐГ°ГўГ®ГЈГ®\n";
 		n = 1;
 	}
 	verInTree[n - 1] = true;
@@ -73,12 +73,12 @@ void main()
 		if (imin != -1 && jmin != -1 && lmin != inf)
 		{
 			verInTree[jmin] = true;
-			printf("Ребро V%d-V%d\n", imin + 1, jmin + 1);
+			printf("ГђГҐГЎГ°Г® V%d-V%d\n", imin + 1, jmin + 1);
 		}
 	}*/
 
 	cout << "\ncrascal\n\n";
-	//Алгоритм Краскала
+	//ГЂГ«ГЈГ®Г°ГЁГІГ¬ ГЉГ°Г Г±ГЄГ Г«Г 
 
 	for (int i = 0; i < 8; i++) verInTree[i] = false;
 	int n = 1;
@@ -86,13 +86,13 @@ void main()
 	cin >> n;
 	if (!(1 <= n <= 16))
 	{
-		cout << "Invalid n, начнём с первого\n";
+		cout << "Invalid n, Г­Г Г·Г­ВёГ¬ Г± ГЇГҐГ°ГўГ®ГЈГ®\n";
 		n = 1;
 	}
 	edgInTree[n - 1] = true;
 	verInTree[list[n - 1][1] - 1] = true;
 	verInTree[list[n - 1][2] - 1] = true;
-	printf("Ребро между V%d и V%d\n", list[n - 1][1], list[n - 1][2]);
+	printf("ГђГҐГЎГ°Г® Г¬ГҐГ¦Г¤Гі V%d ГЁ V%d\n", list[n - 1][1], list[n - 1][2]);
 	for (int i = 0; i < 6; i++)
 	{
 		for (int j = 0; j < 16; j++)
@@ -106,7 +106,7 @@ void main()
 				edgInTree[j] = true;
 				verInTree[list[j][1] - 1] = true;
 				verInTree[list[j][2] - 1] = true;
-				printf("Ребро между V%d и V%d\n", list[j][1], list[j][2]);
+				printf("ГђГҐГЎГ°Г® Г¬ГҐГ¦Г¤Гі V%d ГЁ V%d\n", list[j][1], list[j][2]);
 			}
 		}
 	}
